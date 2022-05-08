@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export function CreatePost() {
 
   return {
@@ -8,13 +6,26 @@ export function CreatePost() {
     authorEmail: '',
 
     async handleSubmit() {
-      const { $data } = this;
-      const res = await axios.post('/api/post', {
-        title: $data.title, 
-        content: $data.content,
-        authorEmail: $data.authorEmail
-      });
-      console.log(res);
+      const { $data, $dispatch } = this;
+      // Make the post
+      try {
+        await fetch(`/api/post`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            title: $data.title,
+            content: $data.content,
+            authorEmail: $data.authorEmail
+          })
+        });
+        console.log('Successfully made a new post');
+      } catch (err) {
+        console.error(err);
+      }
+      // Trigger event to replace ViewPost content
+      $dispatch('get-viewpost-html');
     }
   }
 }

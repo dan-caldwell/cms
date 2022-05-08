@@ -10,6 +10,7 @@
     "dev": "concurrently npm:dev:*"
   },
   "dependencies": {
+    "@alpinejs/morph": "^3.10.2",
     "@prisma/client": "3.13.0",
     "alpinejs": "^3.10.2",
     "axios": "^0.27.2",

@@ -1,6 +1,8 @@
-<div class="bg-green-200">
+<div class="bg-green-200" x-data="ViewPost" @get-viewpost-html.window="handleReplaceHTML()">
   <% posts.forEach(post => { %>
-    <div><%= post.content %></div>
+    <div class="p-2" key="<%= post.title %>">
+      <div class="font-bold"><%= post.title %></div>
+      <div><%= post.content %></div>
+    </div>
   <% }) %>
-  <%- JSON.stringify(posts) %>
 </div>
