@@ -1,0 +1,9 @@
+<div x-data="CreatePost" class="max-w-4xl mx-auto bg-gray-200 p-2 flex items-center">
+  <div>Title</div>
+  <textarea class="mr-4" x-model="title"></textarea>
+  <div>Content</div>
+  <textarea class="mr-4" x-model="content"></textarea>
+  <div>Email</div>
+  <textarea class="mr-4" x-model="authorEmail"></textarea>
+  <button @click="handleSubmit" class="bg-green-300 p-2 rounded-lg">Submit</button>
+</div>

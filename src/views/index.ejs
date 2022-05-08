@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/main.js" defer></script>
+  </head>
+  <body>
+    <%- include('./components/CreatePost/index') %>
+    <%- include('./components/ViewPost/index', { posts }) %>
+  </body>
+</html>
